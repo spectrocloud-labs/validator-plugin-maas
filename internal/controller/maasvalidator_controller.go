@@ -18,6 +18,7 @@ package controller
 
 import (
 	"context"
+	"encoding/base64"
 	"fmt"
 	"strings"
 	"time"
@@ -104,6 +105,14 @@ func (r *MaasValidatorReconciler) Reconcile(ctx context.Context, req ctrl.Reques
 	}
 	vres.SafeUpdateValidationResult(r.Client, nn, validationResult, validator.Spec.ResultCount(), err, r.Log)
 
+	// Maas Instance Ext DNS rules
+	validationResult, err = maasRuleService.ReconsileMaasInstanceExtDNSRules(validator.Spec.MaasExternalDNSRule)
+	if err != nil {
+		r.Log.V(0).Error(err, "failed to reconcile MaaS instance rule for external DNS")
+	}
+
+	vres.SafeUpdateValidationResult(r.Client, nn, validationResult, validator.Spec.ResultCount(), err, r.Log)
+
 	r.Log.V(0).Info("Requeuing for re-validation in two minutes.", "name", req.Name, "namespace", req.Namespace)
 	return ctrl.Result{RequeueAfter: time.Second * 120}, nil
 }
@@ -153,7 +162,11 @@ func (r *MaasValidatorReconciler) tokenFromSecret(name, namespace string) (strin
 	if key, found := secret.Data["MAAS_API_KEY"]; found {
 		token := string(key)
 		token = strings.TrimSuffix(token, "\n")
-		return token, nil
+		decodedBytes, err := base64.StdEncoding.DecodeString(token)
+		if err != nil {
+			return "", fmt.Errorf("failed to decode secret data")
+		}
+		return string(decodedBytes), nil
 	}
 	return "", fmt.Errorf("secret does not contain MAAS_API_KEY")
 }

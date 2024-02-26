@@ -22,8 +22,9 @@ import (
 
 // MaasValidatorSpec defines the desired state of MaasValidator
 type MaasValidatorSpec struct {
-	MaasInstanceRules `json:"MaasInstanceRules,omitempty" yaml:"MaasInstanceRules,omitempty"`
-	MaasInstance      `json:"MaasInstance" yaml:"MaasInstance"`
+	MaasInstance        `json:"MaasInstance" yaml:"MaasInstance"`
+	MaasExternalDNSRule `json:"maasExternalDnsRule,omitempty" yaml:"maasExternalDnsRule,omitempty"`
+	MaasInstanceRules   `json:"MaasInstanceRules,omitempty" yaml:"MaasInstanceRules,omitempty"`
 }
 
 func (s MaasValidatorSpec) ResultCount() int {
@@ -34,7 +35,17 @@ func (s MaasValidatorSpec) ResultCount() int {
 type MaasInstance struct {
 	// Host is the URL for your MaaS instance
 	Host string `json:"host" yaml:"host"`
-	Auth Auth   `json:"auth" yaml:"auth"`
+	// Auth provides authentication information for the MaaS Instance
+	Auth Auth `json:"auth" yaml:"auth"`
+}
+
+type Nameserver string
+
+// Verify that the MaasExternalDNSRule is enabled
+// Checks that MaaS has at least one DNS server configured
+// and that this DNS server is reachable on port 53.
+type MaasExternalDNSRule struct {
+	Enabled bool `json:"enabled" yaml:"enabled"`
 }
 
 type MaasInstanceRules struct {
@@ -42,9 +53,8 @@ type MaasInstanceRules struct {
 	Name string `json:"name" yaml:"name"`
 	// OSImages is a list of bootable os images
 	OSImages []OSImage `json:"bootable-images,omitempty" yaml:"bootable-images,omitempty"`
-
-	// Auth provides authentication information for the MaaS Instance
-	Auth Auth `json:"auth" yaml:"auth"`
+	// List of DNS Servers (IP addresses)
+	Nameservers []Nameserver `json:"nameservers,omitempty" yaml:"nameservers,omitempty"`
 }
 
 type OSImage struct {
