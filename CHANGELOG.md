@@ -1,5 +1,35 @@
 # Changelog
 
+## [0.0.5](https://github.com/validator-labs/validator-plugin-maas/compare/v0.0.4...v0.0.5) (2024-06-27)
+
+
+### Bug Fixes
+
+* **deps:** update kubernetes packages to v0.30.1 ([#49](https://github.com/validator-labs/validator-plugin-maas/issues/49)) ([377eece](https://github.com/validator-labs/validator-plugin-maas/commit/377eece67c2edd9b181dcd0f6a639e936e8d7442))
+* **deps:** update kubernetes packages to v0.30.2 ([#83](https://github.com/validator-labs/validator-plugin-maas/issues/83)) ([726a2ce](https://github.com/validator-labs/validator-plugin-maas/commit/726a2cea156c9b43e53a5b3f8e6acda4e9736c2a))
+* **deps:** update module github.com/go-logr/logr to v1.4.2 ([59edbe8](https://github.com/validator-labs/validator-plugin-maas/commit/59edbe8e8f95c2f859678d815ec68d6c0fda866b))
+* **deps:** update module github.com/maas/gomaasclient to v0.5.0 ([#74](https://github.com/validator-labs/validator-plugin-maas/issues/74)) ([26b3340](https://github.com/validator-labs/validator-plugin-maas/commit/26b334004b60a296e321106999143b85df1ed24e))
+* **deps:** update module github.com/onsi/ginkgo/v2 to v2.19.0 ([61ecc09](https://github.com/validator-labs/validator-plugin-maas/commit/61ecc09d247a6cc88b35e1cd1422ea883195b02a))
+* **deps:** update module github.com/validator-labs/validator to v0.0.41 ([e0f3909](https://github.com/validator-labs/validator-plugin-maas/commit/e0f39096f8c9adde4a779ab76af830e43525850b))
+* **deps:** update module github.com/validator-labs/validator to v0.0.42 ([#81](https://github.com/validator-labs/validator-plugin-maas/issues/81)) ([713d9f0](https://github.com/validator-labs/validator-plugin-maas/commit/713d9f02787d380dba23a61a3b8924f0cc4afb6d))
+* **deps:** update module github.com/validator-labs/validator to v0.0.43 ([929bc17](https://github.com/validator-labs/validator-plugin-maas/commit/929bc17d29efc01f68a569aa8eb6ea3aee8492f9))
+* **deps:** update module sigs.k8s.io/cluster-api to v1.7.3 ([052dee8](https://github.com/validator-labs/validator-plugin-maas/commit/052dee8eab2791e1b00ced0ba037c29ca48bb5f4))
+* **deps:** update module sigs.k8s.io/controller-runtime to v0.18.4 ([a438000](https://github.com/validator-labs/validator-plugin-maas/commit/a438000b8855fae923d2e0d5f69bc29c995cfc24))
+
+
+### Other
+
+* **deps:** pin googleapis/release-please-action action to f3969c0 ([#67](https://github.com/validator-labs/validator-plugin-maas/issues/67)) ([9fef1b8](https://github.com/validator-labs/validator-plugin-maas/commit/9fef1b8f71845efee191156580019a7edf5c6b73))
+* **deps:** update actions/checkout digest to 0ad4b8f ([#61](https://github.com/validator-labs/validator-plugin-maas/issues/61)) ([7d40608](https://github.com/validator-labs/validator-plugin-maas/commit/7d40608b1fcfef9f7438f92154258b925928d4ea))
+* **deps:** update actions/checkout digest to a5ac7e5 ([0d79ce6](https://github.com/validator-labs/validator-plugin-maas/commit/0d79ce6b5e4d9424e6b33cd0543fbd523ae0bf84))
+* **deps:** update anchore/sbom-action action to v0.16.0 ([cd9bab3](https://github.com/validator-labs/validator-plugin-maas/commit/cd9bab323ce1bcf9ea82d7728eec8460c116ac27))
+* **deps:** update codecov/codecov-action digest to 125fc84 ([#69](https://github.com/validator-labs/validator-plugin-maas/issues/69)) ([3ae8c36](https://github.com/validator-labs/validator-plugin-maas/commit/3ae8c36bc808300861e2240ec967cd0241d2b5b1))
+* **deps:** update dependency go to v1.22.4 ([#76](https://github.com/validator-labs/validator-plugin-maas/issues/76)) ([47fe6e2](https://github.com/validator-labs/validator-plugin-maas/commit/47fe6e22698ac46db51df43663c01ea237feb32f))
+* **deps:** update docker/login-action digest to 0d4c9c5 ([#70](https://github.com/validator-labs/validator-plugin-maas/issues/70)) ([6b0f1a2](https://github.com/validator-labs/validator-plugin-maas/commit/6b0f1a29cc586393ed17d0bf11e8ca8bd35acdaf))
+* **deps:** update docker/setup-buildx-action digest to d70bba7 ([#26](https://github.com/validator-labs/validator-plugin-maas/issues/26)) ([41c699c](https://github.com/validator-labs/validator-plugin-maas/commit/41c699cf2ac1cba5c2b14ded653d67652bad6f25))
+* **deps:** update gcr.io/kubebuilder/kube-rbac-proxy docker tag to v0.16.0 ([#47](https://github.com/validator-labs/validator-plugin-maas/issues/47)) ([a53bf65](https://github.com/validator-labs/validator-plugin-maas/commit/a53bf6533fdfc9459a41d17322d991edc38947b1))
+* **deps:** update quay.io/validator-labs/validator-plugin-maas docker tag to v0.0.42 ([#80](https://github.com/validator-labs/validator-plugin-maas/issues/80)) ([3653e6e](https://github.com/validator-labs/validator-plugin-maas/commit/3653e6ee14919283504921e0a38ccb7ce19479a4))
+
 ## [0.0.4](https://github.com/validator-labs/validator-plugin-maas/compare/v0.0.3...v0.0.4) (2024-05-17)
 
 
